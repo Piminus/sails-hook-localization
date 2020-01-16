@@ -1,0 +1,22 @@
+mixin listSelect(postfix)
+  -var locales = locals.all_locales;
+  -var default_locale = locals.default_locale;
+  -var current_url = locals.current_url;
+  -var change_lang = sails.config.adminpanel.routePrefix + postfix;
+  -var current_locale = locals.current_locale;
+  script.
+    $("#locales").selectmenu();
+  fieldset
+    label(for='locales') Select locale
+      select#locales(name='Locales', onchange='location = this.value;')
+        each val in locales
+          unless current_locale
+            if val === default_locale
+              option(selected value= '#{change_lang}' + '?current_url=' + '#{current_url}' + '&locale=' + '#{val}') #{val}
+            else
+              option(value= '#{change_lang}' + '?current_url=' + '#{current_url}' + '&locale=' + '#{val}') #{val}
+          else
+            if val === current_locale
+              option(selected value= '#{change_lang}' + '?current_url=' + '#{current_url}' + '&locale=' + '#{val}') #{val}
+            else
+              option(value= '#{change_lang}' + '?current_url=' + '#{current_url}' + '&locale=' + '#{val}') #{val}

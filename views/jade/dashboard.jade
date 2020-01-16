@@ -1,0 +1,12 @@
+extends ../../../node_modules/sails-hook-adminpanel/views/jade/dashboard
+
+include mixin/changeLocaleHelper
+
+block styles-before
+  script(src='https://code.jquery.com/jquery-1.12.4.js')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+  link(rel='stylesheet', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+  link(rel='stylesheet', href='/resources/demos/style.css')
+
+block header-nav
+  +listSelect('/change/lang')
