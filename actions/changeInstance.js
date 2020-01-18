@@ -41,6 +41,5 @@ module.exports = async function (req, res) {
   }
   parsed_url[parsed_url.length - 1] = resultInstance_id;
   url = parsed_url.join('/');
-  sails.log(url);
   res.redirect(url);
 };

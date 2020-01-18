@@ -1,6 +1,6 @@
 module.exports.localization = {
   models: ['blabla', 'testmodel'],
-  default_locale: function (model, cb) {
+  /*default_locale: function (model, cb) {
     switch (model) {
       case 'blabla':
         cb('en');
@@ -23,5 +23,7 @@ module.exports.localization = {
       default:
         break;
     }
-  },
+  }*/
+  default_locale: 'ru',
+  locales: ['en', 'uk', 'ua']
 };
