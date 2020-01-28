@@ -33,7 +33,8 @@ module.exports = function (req, res) {
 };
 
 function listing(req,res,default_locale, all_locales, switcher_flag) {
-  var locale = req.session.locale;
+  var locale;
+  req.session.locale = "";
   var instance = util.findInstanceObject(req);
   if (!instance.model) {
     return res.notFound();

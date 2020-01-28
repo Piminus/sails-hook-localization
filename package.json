@@ -11,5 +11,8 @@
   "sails": {
     "isHook": true,
     "hookName": "adminpanel-localization"
+  },
+  "dependencies": {
+    "sails-hook-adminpanel": "git+http://git.42team.org/SailsAdmin/sails-hook-adminpanel",
   }
 }

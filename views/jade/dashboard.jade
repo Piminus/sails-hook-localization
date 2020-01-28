@@ -1,4 +1,4 @@
-extends ../../../node_modules/sails-hook-adminpanel/views/jade/dashboard
+extends ../../../sails-hook-adminpanel/views/jade/dashboard
 
 include mixin/changeLocaleHelper
 
@@ -9,4 +9,5 @@ block styles-before
   link(rel='stylesheet', href='/resources/demos/style.css')
 
 block header-nav
-  +listSelect('/change/lang')
+  if switcher_flag === true
+    +listSelect('/change/lang')

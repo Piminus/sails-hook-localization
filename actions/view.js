@@ -9,8 +9,6 @@ var async = require('async');
 
 module.exports = function (req, res) {
   resViewDecorator();
-  var locale = req.session.locale;
-
   //Check id
   if (!req.param('id')) {
     return res.notFound();
@@ -19,14 +17,16 @@ module.exports = function (req, res) {
   const config_locales_callback = config.locales;
   const default_locale_callback = config.default_locale;
   let instance_name = util.findInstanceName(req);
+  var locale;
   let name = util.findInstanceConfig(req, instance_name).model.toLowerCase();
   if (typeof config.default_locale === "function" && typeof config.locales === "function") {
     default_locale_callback(name, default_locale => {
       config_locales_callback(name, all_locales => {
-        view(req, res, default_locale, all_locales, locale);
+        view(req, res, default_locale, all_locales);
       });
     });
   } else {
+    locale = req.session.locale;
     view(req, res, config.default_locale, config.locales, locale);
   }
 
@@ -59,7 +59,6 @@ function view(req,res,default_locale, all_locales, locale) {
       return res.serverError();
     }
     if (record === undefined) {
-      sails.log("@@@@");
       res.redirect(req.url);
     }
     res.viewAdmin({
