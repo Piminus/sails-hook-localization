@@ -1,18 +1,21 @@
 {
-  "name": "sails-hook-adminpanel-localization",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Egor Shulga",
-  "license": "ISC",
-  "sails": {
-    "isHook": true,
-    "hookName": "adminpanel-localization"
-  },
-  "dependencies": {
-    "sails-hook-adminpanel": "git+http://git.42team.org/SailsAdmin/sails-hook-adminpanel",
-  }
+   "name":"sails-hook-adminpanel-localization",
+   "version":"1.0.0",
+   "description":"",
+   "main":"index.js",
+   "scripts":{
+      "test":"echo \"Error: no test specified\" && exit 1"
+   
+},
+   "author":"Egor Shulga",
+   "license":"ISC",
+   "sails":{
+      "isHook":true,
+      "hookName":"adminpanel-localization"
+   
+},
+   "dependencies":{
+      "sails-hook-adminpanel":"git+http://git.42team.org/SailsAdmin/sails-hook-adminpanel"
+   
+}
 }
